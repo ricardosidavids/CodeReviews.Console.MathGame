@@ -3,7 +3,6 @@ Console.WriteLine("Please enter which option you would like to choose: \n1.Recei
        "3. Receive Multiplication tasks\n4. Receive Division tasks\n 5. Show scores");
 
 Random initNumber = new Random();
-int taskNumber = initNumber.Next(1, 100);
 int successes = 0;
 string? input = Console.ReadLine();
 int gamesPlayed = 0;
@@ -14,35 +13,35 @@ while (input.ToLower() != "exit")
     switch (input)
     {
         case "1":
-            additionFunction();
+            AdditionFunction();
 
             break;
         case "2":
-            substractFunction();
+            SubstractFunction();
 
             break;
         case "3":
-            multiplicationFunction();
+            MultiplicationFunction();
 
             break;
         case "4":
-            divisionFunction();
+            DivisionFunction();
 
             break;
         case "5":
-            showGames();
+            ShowGames();
             break;
     }
 }
 
-void showMenu()
+void ShowMenu()
 {
     successes = 0;
     Console.WriteLine("Please enter which option you would like to choose: \n1.Receive Addition tasks\n2. Receive Substraction tasks\n " +
-        "3. Receive Multiplication tasks\n4. Receive Division tasks\n 5. Show scores\n Type "exit" to leave");
+        "3. Receive Multiplication tasks\n4. Receive Division tasks\n 5. Show scores\n Type exit to leave");
     input = Console.ReadLine();
 }
-void additionFunction()
+void AdditionFunction()
 {
     for (int i = 0; i < 5; i++)
     {
@@ -70,10 +69,10 @@ void additionFunction()
     numberofGames[gamesPlayed] = gamesPlayed + 1;
     numberofSuccesses[gamesPlayed] = successes;
     gamesPlayed += 1;
-    showMenu();
+    ShowMenu();
 }
 
-void multiplicationFunction()
+void MultiplicationFunction()
 {
     for (int i = 0; i < 10; i++)
     {
@@ -101,10 +100,10 @@ void multiplicationFunction()
     numberofGames[gamesPlayed] = gamesPlayed + 1;
     numberofSuccesses[gamesPlayed] = successes;
     gamesPlayed += 1;
-    showMenu();
+    ShowMenu();
 }
 
-void substractFunction()
+void SubstractFunction()
 {
     for (int i = 0; i < 10; i++)
     {
@@ -142,10 +141,10 @@ void substractFunction()
     numberofGames[gamesPlayed] = gamesPlayed + 1;
     numberofSuccesses[gamesPlayed] = successes;
     gamesPlayed += 1;
-    showMenu();
+    ShowMenu();
 }
 
-void divisionFunction()
+void DivisionFunction()
 {
     for (int i = 0; i < 10; i++)
     {
@@ -184,15 +183,15 @@ void divisionFunction()
     numberofGames[gamesPlayed] = gamesPlayed + 1;
     numberofSuccesses[gamesPlayed] = successes;
     gamesPlayed += 1;
-    showMenu();
+    ShowMenu();
 }
 
-void showGames()
+void ShowGames()
 {
     for (int i = 0; i < gamesPlayed; i++)
     {
         Console.WriteLine($"Game: {numberofGames[i]}");
         Console.WriteLine($"Score : {numberofSuccesses[i]}");
     }
-    showMenu();
+    ShowMenu();
 }
